@@ -3,11 +3,16 @@ import { useState } from "react";
 // Library import
 import { PlusIcon } from "@heroicons/react/24/solid";
 
-export const CustomForm = () => {
+export const CustomForm = ({ addTask }) => {
   const [task, setTask] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    addTask({
+      name: task,
+      checked: false,
+      id: Date.now(),
+    });
     setTask("");
   };
 
@@ -26,7 +31,7 @@ export const CustomForm = () => {
           placeholder="Enter Task"
         />
         <label htmlFor="task" className="label font-bold">
-          Enter Task{" "}
+          Enter Task
         </label>
       </div>
       <button className="btn" aria-label="Add Task" type="submit">
