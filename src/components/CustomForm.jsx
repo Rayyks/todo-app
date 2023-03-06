@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-// Library import
+// library imports
 import { PlusIcon } from "@heroicons/react/24/solid";
 
-export const CustomForm = ({ addTask }) => {
+const CustomForm = ({ addTask }) => {
   const [task, setTask] = useState("");
 
   const handleFormSubmit = (e) => {
@@ -30,13 +30,14 @@ export const CustomForm = ({ addTask }) => {
           maxLength={60}
           placeholder="Enter Task"
         />
-        <label htmlFor="task" className="label font-bold">
+        <label htmlFor="task" className="label">
           Enter Task
         </label>
       </div>
       <button className="btn" aria-label="Add Task" type="submit">
-        <PlusIcon className="h-6 w-6 text-blue-500" />
+        <PlusIcon />
       </button>
     </form>
   );
 };
+export default CustomForm;

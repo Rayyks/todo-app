@@ -182,8 +182,6 @@ hr {
 }
 
 .label {
-  @apply font-extrabold;
-
   text-transform: uppercase;
   font-size: 0.7em;
   pointer-events: none;
